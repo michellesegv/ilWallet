@@ -1,0 +1,22 @@
+{
+  "/wtcliente": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "loglevel": "debug"
+  },
+  "/wttarjeta": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "loglevel": "debug"
+  },
+  "/wtpago": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "loglevel": "debug"
+  },
+  "/wttransferencia": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "loglevel": "debug"
+  }
+}

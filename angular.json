@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "ilWallet"
+  "defaultProject": "ilWallet",
+  "cli": {
+    "analytics": "5ed18d40-b0f9-420d-98b1-911b88b47e35"
+  }
 }
