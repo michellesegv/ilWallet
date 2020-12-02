@@ -128,9 +128,18 @@ td {
 }
 
 h1.title {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   font-size: 30px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   color: #212529;
   font-weight: 500;
+}
+
+.container-inicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+  padding-bottom: 30px;
 }

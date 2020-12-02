@@ -9,6 +9,8 @@ import { TarjetasComponent } from './componentes/tarjetas/tarjetas.component';
 import { PagosComponent } from './componentes/pagos/pagos.component';
 import { TransferenciasComponent } from './componentes/transferencias/transferencias.component';
 import { CuentasComponent } from './componentes/cuentas/cuentas.component';
+import { RegistrarCuentaComponent } from './componentes/cuentas/registrar-cuenta/registrar-cuenta.component';
+import { RegistrarTarjetaComponent } from './componentes/tarjetas/registrar-tarjeta/registrar-tarjeta.component';
 
 const routes: Routes = [
   {
@@ -47,7 +49,16 @@ const routes: Routes = [
   {
     path: 'cuentas',
     component: CuentasComponent
+  },
+  {
+    path: 'cuentas/registrar-cuenta',
+    component: RegistrarCuentaComponent
+  },
+  {
+    path: 'tarjetas/registrar-tarjeta',
+    component: RegistrarTarjetaComponent
   }
+
   // {
   //   path: 'persona/agregar',
   //   component: GrabarComponent

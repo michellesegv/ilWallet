@@ -55,13 +55,14 @@ body :-ms-input-placeholder {
   /* top: 50%; */
   /* left: 0; */
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   /* margin-top: -200px; */
-  overflow: hidden;
+  /* overflow: auto; */
   /* display: flex;
   justify-content: center;
   align-items: center; */
   /* margin-bottom: -160px; */
+  padding-top: 40px;
 }
 .wrapper.form-success .container h1 {
   -webkit-transform: translateY(85px);
@@ -74,7 +75,7 @@ body :-ms-input-placeholder {
   /* margin: auto 10px; */
   /* height: 400px; */
   text-align: center;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 .container h1 {
   font-size: 40px;

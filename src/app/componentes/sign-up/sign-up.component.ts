@@ -11,32 +11,6 @@ export class SignUpComponent implements OnInit {
 
   public signUpForm: FormGroup;
 
-  // public wiwi = {
-  //   "nombre": "Juana",
-  //   "apellidoPaterno": "Perez",
-  //   "apellidoMaterno": "Ruiz",
-  //   "fechaNacimiento": "1992-09-16",
-  //   "distrito": {
-  //     "distritoId": 1,
-  //     "nombre": "Miraflores"
-  //   },
-  //   "direccion": "Calle 123",
-  //   "tipoDocumento": {
-  //     "tipoDocumentoId": 2,
-  //     "descripcion": "CE"
-  //   },
-  //   "numeroDocumento": "12345678",
-  //   "email": "josue@hotmail.com",
-  //   "celular": "987456123",
-  //   "genero": {
-  //     "generoId": 1,
-  //     "descripcion": "FEMENINO"
-  //   },
-  //   "fechaRegistro": "2020-11-22",
-  //   "userName": "joshua",
-  //   "password": "123456789"
-  // }
-
   constructor(private ClienteService: ClienteService) {
     this.signUpForm = this.createForm();
   }
@@ -78,7 +52,6 @@ export class SignUpComponent implements OnInit {
 
 
   onSaveForm(): void {
-    // this.ClienteService.saveCliente(this.wiwi).subscribe(
     this.ClienteService.saveCliente(this.signUpForm.value).subscribe(
       res => {
         // this.clientes = res;
@@ -86,7 +59,6 @@ export class SignUpComponent implements OnInit {
       },
       err => console.error(err)
     );
-    // console.log(this.signUpForm.value)
-    // this.onResetForm();
+    this.onResetForm();
   }
 }

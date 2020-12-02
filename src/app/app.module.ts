@@ -18,6 +18,11 @@ import { TarjetasComponent } from './componentes/tarjetas/tarjetas.component';
 import { PagosComponent } from './componentes/pagos/pagos.component';
 import { TransferenciasComponent } from './componentes/transferencias/transferencias.component';
 
+import './watson';
+import { RegistrarCuentaComponent } from './componentes/cuentas/registrar-cuenta/registrar-cuenta.component';
+import { RegistrarPagoComponent } from './componentes/pagos/registrar-pago/registrar-pago.component';
+import { RegistrarTarjetaComponent } from './componentes/tarjetas/registrar-tarjeta/registrar-tarjeta.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +35,10 @@ import { TransferenciasComponent } from './componentes/transferencias/transferen
     CuentasComponent,
     TarjetasComponent,
     PagosComponent,
-    TransferenciasComponent
+    TransferenciasComponent,
+    RegistrarCuentaComponent,
+    RegistrarPagoComponent,
+    RegistrarTarjetaComponent
   ],
   imports: [
     BrowserModule,
@@ -44,3 +52,4 @@ import { TransferenciasComponent } from './componentes/transferencias/transferen
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

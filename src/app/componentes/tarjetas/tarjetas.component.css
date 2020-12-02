@@ -296,3 +296,21 @@ body {
     transform: rotateY(180deg);
   }
 }
+
+h1.title {
+  /* margin-bottom: 30px; */
+  font-size: 30px;
+  /* margin-bottom: 30px; */
+  color: #212529;
+  font-weight: 500;
+}
+
+.container-inicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.container {
+  padding-bottom: 30px;
+}

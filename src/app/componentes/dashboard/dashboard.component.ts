@@ -10,6 +10,7 @@ export class DashboardComponent implements OnInit {
   clientes: any = []
   idCliente: any = 0
   clienteData: any = {}
+  name: any = ''
 
   constructor(private ClienteService: ClienteService) { }
 
@@ -38,6 +39,7 @@ export class DashboardComponent implements OnInit {
     })
 
     console.log('this.clienteData', this.clienteData)
+    this.name = this.clienteData[0].nombre
   }
 
   // wiwi() {
