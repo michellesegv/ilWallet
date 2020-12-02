@@ -16,7 +16,7 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { CuentasComponent } from './componentes/cuentas/cuentas.component';
 import { TarjetasComponent } from './componentes/tarjetas/tarjetas.component';
 import { PagosComponent } from './componentes/pagos/pagos.component';
-import { TransaccionesComponent } from './componentes/transacciones/transacciones.component';
+import { TransferenciasComponent } from './componentes/transferencias/transferencias.component';
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { TransaccionesComponent } from './componentes/transacciones/transaccione
     CuentasComponent,
     TarjetasComponent,
     PagosComponent,
-    TransaccionesComponent
+    TransferenciasComponent
   ],
   imports: [
     BrowserModule,

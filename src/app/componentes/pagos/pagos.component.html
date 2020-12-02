@@ -1,1 +1,43 @@
-<p>pagos works!</p>
+<app-header></app-header>
+<div class="container">
+  <h1 class="text-center titulo">Tus pagos</h1>
+  <div class="table-responsive">
+    <table class="table v-middle">
+      <thead>
+        <tr class="bg-light">
+          <th class="border-top-0">Ícono</th>
+          <th class="border-top-0">Número de cuenta</th>
+          <th class="border-top-0">Tipo de cuenta</th>
+          <th class="border-top-0">Fecha</th>
+          <th class="border-top-0">Monto</th>
+          <th class="border-top-0">Servicio</th>
+          <th class="border-top-0">Tipo operación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let pago of pagos'>
+          <td>
+            <div class="m-r-10">
+              <a class="btn btn-circle btn-success text-white img-inicial">P</a>
+            </div>
+          </td>
+          <td>
+            <div class="d-flex align-items-center">
+
+              <div class="">
+                <h4 class="m-b-0 font-16">{{pago.cuenta.numerocuenta}}</h4>
+              </div>
+            </div>
+          </td>
+          <td>{{pago.cuenta.tipocuenta.descripcion}}</td>
+          <td>{{pago.fechaPago}}</td>
+          <td>
+            <h5 class="m-b-0">s/.{{pago.monto}}</h5>
+          </td>
+          <td>{{pago.servicio.descripcion}}</td>
+          <td>{{pago.tipotransacccion.descripcion}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

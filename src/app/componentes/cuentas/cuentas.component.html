@@ -1,1 +1,34 @@
-<p>cuentas works!</p>
+<app-header></app-header>
+
+<h1 class="title">Tus cuentas</h1>
+<table class="container">
+  <thead>
+    <tr>
+      <th>
+        <h1>Banco</h1>
+      </th>
+      <th>
+        <h1>Estado</h1>
+      </th>
+      <th>
+        <h1>Número de cuenta</h1>
+      </th>
+      <th>
+        <h1>Tipo de cuenta</h1>
+      </th>
+      <th>
+        <h1>Saldo</h1>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor='let cuenta of cuentas'>
+      <td>{{cuenta.banco.nombre}}</td>
+      <td>{{cuenta.estado.descripcion}}</td>
+      <td>{{cuenta.numerocuenta}}</td>
+      <td>{{cuenta.tipocuenta.descripcion}}</td>
+      <td>s/. {{cuenta.saldo}}</td>
+    </tr>
+  </tbody>
+</table>

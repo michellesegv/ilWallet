@@ -7,7 +7,9 @@ import { Tarjeta } from '../models/tarjeta'
 @Injectable({
   providedIn: 'root'
 })
+
 export class TarjetaService {
+
   API_URI = '/wttarjeta'
 
   constructor(private http: HttpClient) { }
@@ -16,10 +18,11 @@ export class TarjetaService {
     return this.http.get(`${this.API_URI}`);
   }
 
-  saveTarjeta(cliente: Tarjeta) {
-    return this.http.post(`${this.API_URI}/add`, cliente);
+  saveTarjeta(tarjeta: Tarjeta) {
+    return this.http.post(`${this.API_URI}/add`, tarjeta);
   }
-  updateTarjeta(cliente: Tarjeta): Observable<Tarjeta> {
-    return this.http.put(`${this.API_URI}/upd`, cliente);
+
+  updateTarjeta(tarjeta: Tarjeta): Observable<Tarjeta> {
+    return this.http.put(`${this.API_URI}/upd`, tarjeta);
   }
 }

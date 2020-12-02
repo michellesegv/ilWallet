@@ -74,7 +74,7 @@ body :-ms-input-placeholder {
   /* margin: auto 10px; */
   /* height: 400px; */
   text-align: center;
-  margin-top: 250px;
+  margin-top: 100px;
 }
 .container h1 {
   font-size: 40px;
@@ -248,10 +248,15 @@ form button:hover {
     transform: translateY(-700px) rotate(600deg);
   }
 }
+button {
+  font-weight: bold;
+}
 
 .go-to-signup {
   color: white;
 }
 .go-to-signup a {
-  color: #53e3a6;
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
 }

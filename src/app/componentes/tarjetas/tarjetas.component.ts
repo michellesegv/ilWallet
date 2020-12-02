@@ -27,5 +27,4 @@ export class TarjetasComponent implements OnInit {
         err => console.error(err)
       );
   }
-
 }

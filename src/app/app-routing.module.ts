@@ -7,7 +7,7 @@ import { ListarComponent } from './componentes/listar/listar.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { TarjetasComponent } from './componentes/tarjetas/tarjetas.component';
 import { PagosComponent } from './componentes/pagos/pagos.component';
-import { TransaccionesComponent } from './componentes/transacciones/transacciones.component';
+import { TransferenciasComponent } from './componentes/transferencias/transferencias.component';
 import { CuentasComponent } from './componentes/cuentas/cuentas.component';
 
 const routes: Routes = [
@@ -41,8 +41,8 @@ const routes: Routes = [
     component: PagosComponent
   },
   {
-    path: 'transacciones',
-    component: TransaccionesComponent
+    path: 'transferencias',
+    component: TransferenciasComponent
   },
   {
     path: 'cuentas',

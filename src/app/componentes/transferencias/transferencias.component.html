@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="container">
+  <h1 class="text-center titulo">Tus transferencias</h1>
+  <div class="table-responsive">
+    <table class="table v-middle">
+      <thead>
+        <tr class="bg-light">
+          <th class="border-top-0">Ícono</th>
+          <th class="border-top-0">Número de cuenta</th>
+          <th class="border-top-0">Tipo de cuenta</th>
+          <th class="border-top-0">Banco</th>
+          <th class="border-top-0">Saldo cuenta</th>
+          <th class="border-top-0">Cuenta destino</th>
+          <th class="border-top-0">Monto</th>
+          <th class="border-top-0">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let transferencia of transferencias'>
+          <td>
+            <div class="m-r-10">
+              <a class="btn btn-circle btn-info text-white img-inicial">T</a>
+            </div>
+          </td>
+          <td>
+            <div class="d-flex align-items-center">
+              <div class="">
+                <h4 class="m-b-0 font-16">{{transferencia.cuenta.numerocuenta}}</h4>
+              </div>
+            </div>
+          </td>
+          <td>{{transferencia.cuenta.tipocuenta.descripcion}}</td>
+          <td>{{transferencia.banco.nombre}}</td>
+          <td>
+            <h5 class="m-b-0">s/.{{transferencia.cuenta.saldo}}</h5>
+          </td>
+          <td>
+            <div class="d-flex align-items-center">
+              <div class="">
+                <h4 class="m-b-0 font-16">{{transferencia.cuentadestinatario}}</h4>
+              </div>
+            </div>
+          </td>
+          <!-- <td>
+            <label class="label {{ts.technologyClass}}">{{ts.technology}}</label>
+          </td>
+        -->
+          <td>
+            <h5 class="m-b-0">s/.{{transferencia.monto}}</h5>
+          </td>
+          <td>{{transferencia.fechaTransaccion}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
