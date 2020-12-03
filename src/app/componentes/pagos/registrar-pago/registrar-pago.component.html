@@ -1,1 +1,44 @@
-<p>registrar-pago works!</p>
+<app-header></app-header>
+<div class="row">
+  <section class="section">
+    <header>
+      <h3>Registra una pago</h3>
+      <h4>Llena los siguientes datos</h4>
+    </header>
+    <main>
+
+      <form [formGroup]="pagoForm" (ngSubmit)="onSaveForm()">
+        <div class="form-item-double box-item">
+          <div class="form-item ">
+            <div class="radio-label">
+              <label class="label">Monto</label>
+            </div>
+          </div>
+          <div class="form-item box-item">
+            <input type="text" name="numeroPago" placeholder="s/." formControlName="monto" data-required>
+          </div>
+        </div>
+        <div class="form-item-double box-item">
+          <div class="form-item ">
+            <div class="radio-label">
+              <label class="label">Servicio</label>
+            </div>
+          </div>
+          <div class="form-item">
+            <select (change)="changeServicio($event)" class="custom-select">
+              <option value="">Elige un servicio</option>
+              <option *ngFor="let servicio of servicios" [ngValue]="servicio.id">{{servicio.nombre}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-item">
+          <button id="submit" type="submit" class="submit">Registrar pago</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <p>¿Ya no deseas registrar un pago? <a href="/pagos">Volver a Mis pagos</a></p>
+    </footer>
+    <i class="wave"></i>
+  </section>
+</div>

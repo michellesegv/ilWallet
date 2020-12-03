@@ -2,85 +2,50 @@
 <div class="row">
   <section class="section">
     <header>
-      <h3>Registra una cuenta</h3>
+      <h3>Registra una tarjeta</h3>
       <h4>Llena los siguientes datos</h4>
     </header>
     <main>
 
-      <form [formGroup]="cuentaForm" (ngSubmit)="onSaveForm()">
+      <form [formGroup]="tarjetaForm" (ngSubmit)="onSaveForm()">
         <div class="form-item box-item">
-          <input type="text" name="name" placeholder="Cuenta" formControlName="numerocuenta" data-required>
+          <input type="text" name="numeroTarjeta" placeholder="Número de tarjeta" formControlName="numeroTarjeta"
+            data-required>
         </div>
-
-        <!-- <div class="form-item box-item">
-          <div class="form-item-triple">
-            <div class="radio-label">
-              <label class="label">Gender</label>
-            </div>
-            <div class="form-item">
-              <input id="Male" type="radio" name="gender" value="Male" data-once>
-              <label for="Male">Male</label>
-            </div>
-            <div class="form-item">
-              <input id="Female" type="radio" name="gender" value="Female" data-once>
-              <label for="Female">Female</label>
-            </div>
-          </div>
-          <small class="errorOnce"><i class="fa fa-asterisk" aria-hidden="true"></i> choose at least one</small>
-        </div> -->
-        <!-- <div class="form-item box-item">
-          <div class="form-item-triple">
-            <div class="radio-label">
-              <label class="label">Type</label>
-            </div>
-            <div class="form-item">
-              <input id="sponsored" type="radio" name="gender2" value="sponsored" data-once>
-              <label for="sponsored">sponsored</label>
-            </div>
-            <div class="form-item">
-              <input id="paid" type="radio" name="gender2" value="paid" data-once>
-              <label for="paid">paid</label>
-            </div>
-          </div>
-          <small class="errorOnce"><i class="fa fa-asterisk" aria-hidden="true"></i> choose at least one</small>
-        </div> -->
 
         <div class="form-item-double box-item">
           <div class="form-item ">
             <div class="radio-label">
-              <label class="label">Banco</label>
+              <label class="label">Marca</label>
             </div>
           </div>
           <div class="form-item">
-            <select (change)="changeBanco($event)" class="custom-select">
-              <option value="">Elige un banco</option>
-              <option *ngFor="let banco of bancos" [ngValue]="banco.id">{{banco.nombre}}</option>
+            <select (change)="changeMarca($event)" class="custom-select">
+              <option value="">Elige una marca</option>
+              <option *ngFor="let marca of marcas" [ngValue]="marca.id">{{marca.nombre}}</option>
             </select>
           </div>
         </div>
         <div class="form-item-double box-item">
-          <div class="form-item">
+          <div class="form-item ">
             <div class="radio-label">
-              <label class="label">Saldo</label>
+              <label class="label">Tipo de tarjeta</label>
             </div>
           </div>
-          <div class="form-item ">
-            <input type="text" name="saldo" placeholder="s/." formControlName="saldo">
+          <div class="form-item">
+            <select (change)="changeTipo($event)" class="custom-select">
+              <option value="">Elige un tipo</option>
+              <option *ngFor="let tipo of tipos" [ngValue]="tipo.id">{{tipo.nombre}}</option>
+            </select>
           </div>
-
         </div>
-
-        <!-- <div class="form-item box-item">
-          <input type="text" name="name" placeholder="Cuenta" formControlName="cuenta" data-required>
-        </div> -->
-
         <div class="form-item">
-          <button id="submit" type="submit" class="submit">Registrar cuenta</button>
+          <button id="submit" type="submit" class="submit">Registrar tarjeta</button>
         </div>
       </form>
     </main>
     <footer>
-      <p>¿Ya no deseas registrar una cuenta? <a href="/cuentas">Volver a Mis cuentas</a></p>
+      <p>¿Ya no deseas registrar una tarjeta? <a href="/tarjetas">Volver a Mis tarjetas</a></p>
     </footer>
     <i class="wave"></i>
   </section>
