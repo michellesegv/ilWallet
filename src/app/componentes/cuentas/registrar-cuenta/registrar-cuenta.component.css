@@ -242,8 +242,14 @@ small.errorOnce {
   transition: all ease 0.2s;
 }
 .submit:hover {
-  background-color: #eda261;
-  border: 2px solid #eda261;
+  background-color: #703896;
+  border: 2px solid #703896;
+  color: #fff;
+  border: 1px solid #fff;
+}
+button {
+  border: 0;
+  outline: none;
 }
 
 .wave {

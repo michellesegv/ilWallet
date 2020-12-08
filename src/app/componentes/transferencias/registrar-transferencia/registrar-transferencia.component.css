@@ -16,6 +16,7 @@ button {
   border: 0;
   outline: none;
 }
+
 body {
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
@@ -36,7 +37,7 @@ body {
 
 .section {
   color: #fff;
-  background-color: #206e46;
+  background-color: #0a088a;
   position: relative;
   overflow: hidden;
   display: -webkit-box;
@@ -88,7 +89,7 @@ main {
 
 footer {
   width: 100%;
-  background-color: #32b371;
+  background-color: #323bb3;
   padding: 16px;
   align-self: center;
   text-align: center;
@@ -245,8 +246,8 @@ small.errorOnce {
   transition: all ease 0.2s;
 }
 .submit:hover {
-  background-color: #2b971d;
-  border: 2px solid #2b971d;
+  background-color: #6ba3c9;
+  border: 2px solid #6ba3c9;
   color: #fff;
   border: 1px solid #fff;
 }
@@ -259,7 +260,7 @@ small.errorOnce {
   height: 800px;
   margin-top: -600px;
   margin-left: -400px;
-  background: #34ab38;
+  background: #435bc4;
   border-radius: 40%;
   -webkit-animation: shift 20s infinite linear;
   animation: shift 20s infinite linear;
@@ -284,7 +285,15 @@ small.errorOnce {
   width: 300px;
 }
 
-button {
-  border: 0;
-  outline: none;
+.form-item {
+  width: 35%;
+}
+.form-item.box-item {
+  width: 75%;
+}
+.custom-select {
+  width: 100%;
+}
+.submit-ctn {
+  width: 100%;
 }

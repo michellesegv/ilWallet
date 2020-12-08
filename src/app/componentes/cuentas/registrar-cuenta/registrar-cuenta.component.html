@@ -12,39 +12,6 @@
           <input type="text" name="name" placeholder="Cuenta" formControlName="numerocuenta" data-required>
         </div>
 
-        <!-- <div class="form-item box-item">
-          <div class="form-item-triple">
-            <div class="radio-label">
-              <label class="label">Gender</label>
-            </div>
-            <div class="form-item">
-              <input id="Male" type="radio" name="gender" value="Male" data-once>
-              <label for="Male">Male</label>
-            </div>
-            <div class="form-item">
-              <input id="Female" type="radio" name="gender" value="Female" data-once>
-              <label for="Female">Female</label>
-            </div>
-          </div>
-          <small class="errorOnce"><i class="fa fa-asterisk" aria-hidden="true"></i> choose at least one</small>
-        </div> -->
-        <!-- <div class="form-item box-item">
-          <div class="form-item-triple">
-            <div class="radio-label">
-              <label class="label">Type</label>
-            </div>
-            <div class="form-item">
-              <input id="sponsored" type="radio" name="gender2" value="sponsored" data-once>
-              <label for="sponsored">sponsored</label>
-            </div>
-            <div class="form-item">
-              <input id="paid" type="radio" name="gender2" value="paid" data-once>
-              <label for="paid">paid</label>
-            </div>
-          </div>
-          <small class="errorOnce"><i class="fa fa-asterisk" aria-hidden="true"></i> choose at least one</small>
-        </div> -->
-
         <div class="form-item-double box-item">
           <div class="form-item ">
             <div class="radio-label">
@@ -55,6 +22,19 @@
             <select (change)="changeBanco($event)" class="custom-select">
               <option value="">Elige un banco</option>
               <option *ngFor="let banco of bancos" [ngValue]="banco.id">{{banco.nombre}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-item-double box-item">
+          <div class="form-item ">
+            <div class="radio-label">
+              <label class="label">Tipo de cuenta</label>
+            </div>
+          </div>
+          <div class="form-item">
+            <select (change)="changeTipoCuenta($event)" class="custom-select">
+              <option value="">Elige un tipo de cuenta</option>
+              <option *ngFor="let tipo of tiposCuenta" [ngValue]="tipo.id">{{tipo.nombre}}</option>
             </select>
           </div>
         </div>

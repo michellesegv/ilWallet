@@ -242,8 +242,10 @@ small.errorOnce {
   transition: all ease 0.2s;
 }
 .submit:hover {
-  background-color: #eda261;
-  border: 2px solid #eda261;
+  background-color: #0a0a0a;
+  border: 2px solid #0a0a0a;
+  color: #fff;
+  border: 1px solid #fff;
 }
 
 .wave {
@@ -273,4 +275,13 @@ small.errorOnce {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.custom-select {
+  width: 250px;
+  float: right;
+}
+button {
+  border: 0;
+  outline: none;
 }

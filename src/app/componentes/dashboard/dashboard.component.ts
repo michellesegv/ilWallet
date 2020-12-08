@@ -7,10 +7,10 @@ import { ClienteService } from '../../services/cliente.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  clientes: any = []
-  idCliente: any = 0
-  clienteData: any = {}
-  name: any = ''
+  public clientes: any = []
+  public idCliente: any = 0
+  public clienteData: any = {}
+  public name: any = ''
 
   constructor(private ClienteService: ClienteService) { }
 

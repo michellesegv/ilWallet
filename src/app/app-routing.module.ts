@@ -9,6 +9,7 @@ import { TarjetasComponent } from './componentes/tarjetas/tarjetas.component';
 import { PagosComponent } from './componentes/pagos/pagos.component';
 import { RegistrarPagoComponent } from './componentes/pagos/registrar-pago/registrar-pago.component';
 import { TransferenciasComponent } from './componentes/transferencias/transferencias.component';
+import { RegistrarTransferenciaComponent } from './componentes/transferencias/registrar-transferencia/registrar-transferencia.component';
 import { CuentasComponent } from './componentes/cuentas/cuentas.component';
 import { RegistrarCuentaComponent } from './componentes/cuentas/registrar-cuenta/registrar-cuenta.component';
 import { RegistrarTarjetaComponent } from './componentes/tarjetas/registrar-tarjeta/registrar-tarjeta.component';
@@ -62,12 +63,11 @@ const routes: Routes = [
   {
     path: 'pagos/registrar-pago',
     component: RegistrarPagoComponent
+  },
+  {
+    path: 'transferencias/registrar-transferencia',
+    component: RegistrarTransferenciaComponent
   }
-
-  // {
-  //   path: 'persona/agregar',
-  //   component: GrabarComponent
-  // },
   // {
   //   path: 'persona/editar/:id',
   //   component: GrabarComponent

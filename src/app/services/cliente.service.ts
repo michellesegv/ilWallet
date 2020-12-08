@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 
 export class ClienteService {
-  // http://localhost:8080/wtcliente/add
+
   API_URI = '/wtcliente'
 
   constructor(private http: HttpClient) { }
@@ -18,14 +18,6 @@ export class ClienteService {
   getClientes() {
     return this.http.get(`${this.API_URI}`);
   }
-
-  // getCliente(id: number) {
-  //   return this.http.get(`${this.API_URI}/${id}`);
-  // }
-
-  // deleteCliente(id: number) {
-  //   return this.http.delete(`${this.API_URI}/${id}`);
-  // }
 
   saveCliente(cliente: Cliente) {
     return this.http.post(`${this.API_URI}/add`, cliente);

@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="row">
+  <section class="section">
+    <header>
+      <h3>Registra una transferencia</h3>
+      <h4>Llena los siguientes datos</h4>
+    </header>
+    <main>
+
+      <form [formGroup]="transferenciaForm" (ngSubmit)="onSaveForm()">
+        <div class="form-item-double box-item">
+          <div class="form-item ">
+            <div class="radio-label">
+              <label class="label">Nmro cuenta
+                destino</label>
+            </div>
+          </div>
+          <div class="form-item box-item">
+            <input type="text" name="numerodestino" placeholder="0000 0000 0000 0000" formControlName="numerodestino"
+              data-required>
+          </div>
+        </div>
+        <div class="form-item-double box-item">
+          <div class="form-item ">
+            <div class="radio-label">
+              <label class="label">Monto</label>
+            </div>
+          </div>
+          <div class="form-item box-item">
+            <input type="text" name="numeroPago" placeholder="s/." formControlName="monto" data-required>
+          </div>
+        </div>
+        <div class="form-item-double box-item">
+          <div class="form-item ">
+            <div class="radio-label">
+              <label class="label">Banco</label>
+            </div>
+          </div>
+          <div class="form-item box-item">
+            <select (change)="changeBanco($event)" class="custom-select">
+              <option value="">Elige un banco</option>
+              <option *ngFor="let banco of bancos" [ngValue]="banco.id">{{banco.nombre}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-item submit-ctn">
+          <button id="submit" type="submit" class="submit">Registrar transferencia</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <p>¿Ya no deseas registrar un transferencia? <a href="/transferencias">Volver a Mis transferencias</a></p>
+    </footer>
+    <i class="wave"></i>
+  </section>
+</div>

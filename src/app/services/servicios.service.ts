@@ -4,12 +4,13 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class EmpresaService {
+export class ServiciosService {
 
-  API_URI = '/wtempresa'
+  API_URI = '/wtservicio'
+
   constructor(private http: HttpClient) { }
 
-  getEmpresasPorCategoria(idCategoria: number) {
-    return this.http.get(`${this.API_URI}/empresasPorCategoria/${idCategoria}`);
+  getServiciosPorEmpresa(idEmpresa: number) {
+    return this.http.get(`${this.API_URI}/serviciosPorEmpresa/${idEmpresa}`);
   }
 }

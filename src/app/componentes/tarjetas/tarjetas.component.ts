@@ -9,22 +9,34 @@ import { TarjetaService } from '../../services/tarjeta.service'
 export class TarjetasComponent implements OnInit {
 
   tarjetas: any = []
+  idCliente: any = ''
 
   constructor(private TarjetaService: TarjetaService) { }
 
   ngOnInit(): void {
-    this.getTarjetas()
+    this.idCliente = JSON.parse(localStorage.getItem('dataUser')).id
+
+    this.getTarjetasPorCliente()
   }
 
-  getTarjetas() {
-    this.TarjetaService.getTarjetas()
+  getTarjetasPorCliente() {
+    this.TarjetaService.getTarjetasPorCliente(this.idCliente)
       .subscribe(
         res => {
           this.tarjetas = res;
-          // this.filteCliente(this.tarjetas)
           console.log(res)
         },
         err => console.error(err)
       );
   }
+  // getTarjetas() {
+  //   this.TarjetaService.getTarjetas()
+  //     .subscribe(
+  //       res => {
+  //         this.tarjetas = res;
+  //         console.log(res)
+  //       },
+  //       err => console.error(err)
+  //     );
+  // }
 }
