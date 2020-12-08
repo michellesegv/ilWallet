@@ -63,6 +63,8 @@ body :-ms-input-placeholder {
   align-items: center; */
   /* margin-bottom: -160px; */
   padding-top: 40px;
+  z-index: 999999;
+  position: relative;
 }
 .wrapper.form-success .container h1 {
   -webkit-transform: translateY(85px);
