@@ -17,6 +17,11 @@ export class CuentaService {
     return this.http.get(`${this.API_URI}`);
   }
 
+  getCuentasPorCliente(idCliente: string) {
+    return this.http.get(`${this.API_URI}/cuentaPorCliente/${idCliente}`);
+  }
+
+
   saveCuenta(cuenta: Cuenta) {
     return this.http.post(`${this.API_URI}/add`, cuenta);
   }

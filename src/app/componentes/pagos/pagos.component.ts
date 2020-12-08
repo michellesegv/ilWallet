@@ -8,7 +8,7 @@ import { PagoService } from '../../services/pago.service'
 })
 export class PagosComponent implements OnInit {
 
-  pagos: any = []
+  public pagos: any = []
 
   constructor(private PagoService: PagoService) { }
 

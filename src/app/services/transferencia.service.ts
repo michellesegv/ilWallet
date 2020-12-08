@@ -17,6 +17,6 @@ export class TransferenciaService {
   }
 
   saveTransferencia(transferencia: Transferencia) {
-    return this.http.post(`${this.API_URI}/createCharge`, transferencia);
+    return this.http.post(`${this.API_URI}/createTransference`, transferencia);
   }
 }

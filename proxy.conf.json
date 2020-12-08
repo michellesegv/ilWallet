@@ -28,5 +28,15 @@
     "target": "http://localhost:8080",
     "secure": false,
     "loglevel": "debug"
+  },
+  "/wtcategoria": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "loglevel": "debug"
+  },
+  "/wtservicio": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "loglevel": "debug"
   }
 }

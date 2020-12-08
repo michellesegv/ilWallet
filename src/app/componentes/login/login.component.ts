@@ -30,11 +30,17 @@ export class LoginComponent implements OnInit {
   }
 
   onSaveForm(): void {
+    console.log(this.loginForm.value)
+
     this.ClienteService.loginCliente(this.loginForm.value).subscribe(
       (res: any) => {
-        // this.clientes = res;
-        localStorage.setItem('dataUser', JSON.stringify(res.result));
-        this.router.navigate(['/dashboard']);
+        console.log(res)
+        if (res.status == 200) {
+          localStorage.setItem('dataUser', JSON.stringify(res.result));
+          this.router.navigate(['/dashboard']);
+        } else {
+          alert('Tuvimos un error :( Revisa tus datos')
+        }
       },
       err => console.error(err)
     );

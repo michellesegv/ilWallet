@@ -21,11 +21,25 @@
         <div class="form-item-double box-item">
           <div class="form-item ">
             <div class="radio-label">
+              <label class="label">Categoría</label>
+            </div>
+          </div>
+          <div class="form-item">
+            <select (change)="changeCategoria($event)" class="custom-select">
+              <option value="">Elige una categoría</option>
+              <option *ngFor="let categoria of categorias" [ngValue]="categoria.categoriaId">{{categoria.descripcion}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-item-double box-item">
+          <div class="form-item ">
+            <div class="radio-label">
               <label class="label">Empresa</label>
             </div>
           </div>
           <div class="form-item">
-            <select (change)="changeEmpresa($event)" class="custom-select">
+            <select (change)="changeEmpresa($event)" class="custom-select" id="select-empresas">
               <option value="">Elige una empresa</option>
               <option *ngFor="let empresa of empresas" [ngValue]="empresa.id">{{empresa.descripcion}}</option>
             </select>
@@ -40,7 +54,7 @@
           <div class="form-item">
             <select (change)="changeServicio($event)" class="custom-select" id="select-servicios">
               <option value="">Elige un servicio</option>
-              <option *ngFor="let servicio of servicios" [ngValue]="servicio.id">{{servicio.descripcion}}
+              <option *ngFor="let servicio of servicios" [ngValue]="servicio.servicioId">{{servicio.descripcion}}
               </option>
             </select>
           </div>

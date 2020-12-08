@@ -42,12 +42,24 @@ export class RegistrarCuentaComponent implements OnInit {
     },
   ]
 
+  public tiposCuenta: any = [
+    {
+      id: 1,
+      nombre: 'CUENTA AHORRO'
+    },
+    {
+      id: 2,
+      nombre: 'CUENTA CORRIENTE'
+    },
+  ]
+
   constructor(private CuentaService: CuentaService) { }
 
   public cuentaForm: FormGroup;
   public idCliente: any = 0
   public bankId: any = 0
-  bankName: any = ''
+  public tipoCuentaId: any = 0
+  public tipoCuentaName: any = ''
 
   ngOnInit(): void {
     this.cuentaForm = this.createForm();
@@ -61,7 +73,7 @@ export class RegistrarCuentaComponent implements OnInit {
       saldo: new FormControl(),
       tipocuenta: new FormGroup({
         id: new FormControl(1),
-        descripcion: new FormControl('CUENTA AHORRO'),
+        descripcion: new FormControl(),
       }),
       cliente: new FormGroup({
         clienteId: new FormControl(0)
@@ -85,8 +97,13 @@ export class RegistrarCuentaComponent implements OnInit {
   onSaveForm(): void {
 
     this.cuentaForm.value.cliente.clienteId = this.idCliente
+
     this.cuentaForm.value.banco.bancoId = this.bankId
 
+    this.cuentaForm.value.tipocuenta.id = this.tipoCuentaId
+    this.cuentaForm.value.tipocuenta.descripcion = this.tipoCuentaName
+
+    console.log(this.cuentaForm.value)
     this.CuentaService.saveCuenta(this.cuentaForm.value).subscribe(
       (res: any) => {
         if (res.status == 201) {
@@ -101,7 +118,13 @@ export class RegistrarCuentaComponent implements OnInit {
     this.onResetForm();
   }
 
-  changeBanco(e) {
+  changeBanco(e: any) {
     this.bankId = e.target.selectedIndex
+  }
+  changeTipoCuenta(e: any) {
+    this.tipoCuentaId = e.target.selectedIndex
+    this.tipoCuentaName = e.target.value
+    console.log(this.tipoCuentaId)
+    console.log(this.tipoCuentaName)
   }
 }

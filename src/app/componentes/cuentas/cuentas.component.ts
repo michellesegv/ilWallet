@@ -9,16 +9,18 @@ import { CuentaService } from '../../services/cuenta.service'
 })
 export class CuentasComponent implements OnInit {
 
-  cuentas: any = []
+  public cuentas: any = []
+  public idCliente: any = ''
 
   constructor(private CuentaService: CuentaService) { }
 
   ngOnInit(): void {
-    this.getCuentas()
+    this.idCliente = JSON.parse(localStorage.getItem('dataUser')).id
+    this.getCuentasPorCliente()
   }
 
-  getCuentas() {
-    this.CuentaService.getCuentas()
+  getCuentasPorCliente() {
+    this.CuentaService.getCuentasPorCliente(this.idCliente)
       .subscribe(
         res => {
           this.cuentas = res;

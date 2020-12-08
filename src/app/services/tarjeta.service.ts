@@ -18,6 +18,10 @@ export class TarjetaService {
     return this.http.get(`${this.API_URI}`);
   }
 
+  getTarjetasPorCliente(idCliente: string) {
+    return this.http.get(`${this.API_URI}/tarjetaPorCuenta/${idCliente}`);
+  }
+
   saveTarjeta(tarjeta: Tarjeta) {
     return this.http.post(`${this.API_URI}/add`, tarjeta);
   }

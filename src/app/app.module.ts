@@ -10,7 +10,7 @@ import { ListarComponent } from './componentes/listar/listar.component';
 import { RouterModule } from '@angular/router';
 
 import { ClienteService } from './services/cliente.service'
-import { FormGroup, FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { CuentasComponent } from './componentes/cuentas/cuentas.component';
@@ -22,6 +22,7 @@ import './watson';
 import { RegistrarCuentaComponent } from './componentes/cuentas/registrar-cuenta/registrar-cuenta.component';
 import { RegistrarPagoComponent } from './componentes/pagos/registrar-pago/registrar-pago.component';
 import { RegistrarTarjetaComponent } from './componentes/tarjetas/registrar-tarjeta/registrar-tarjeta.component';
+import { RegistrarTransferenciaComponent } from './componentes/transferencias/registrar-transferencia/registrar-transferencia.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { RegistrarTarjetaComponent } from './componentes/tarjetas/registrar-tarj
     TransferenciasComponent,
     RegistrarCuentaComponent,
     RegistrarPagoComponent,
-    RegistrarTarjetaComponent
+    RegistrarTarjetaComponent,
+    RegistrarTransferenciaComponent
   ],
   imports: [
     BrowserModule,

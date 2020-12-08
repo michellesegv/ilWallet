@@ -8,9 +8,9 @@ import { ClienteService } from '../../services/cliente.service';
 })
 export class ListarComponent implements OnInit {
 
-  clientes: any = []
-  idCliente: any = ''
-  clienteData: any = {}
+  public clientes: any = []
+  public idCliente: any = ''
+  public clienteData: any = {}
 
   constructor(private ClienteService: ClienteService) { }
 
