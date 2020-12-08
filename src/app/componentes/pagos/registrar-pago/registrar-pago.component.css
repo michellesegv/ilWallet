@@ -274,3 +274,7 @@ small.errorOnce {
     transform: rotate(360deg);
   }
 }
+
+.custom-select {
+  width: 300px;
+}

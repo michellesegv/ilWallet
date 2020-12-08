@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 import { PagoService } from '../../../services/pago.service'
+import { EmpresaService } from '../../../services/empresa.service'
 
 @Component({
   selector: 'app-registrar-pago',
@@ -11,52 +12,55 @@ import { PagoService } from '../../../services/pago.service'
 
 export class RegistrarPagoComponent implements OnInit {
 
-  public servicios: any = [
+  public empresas: any = [
     {
       id: 1,
-      nombre: 'PROVEEDOR DE LUZ'
+      descripcion: 'PROVEEDOR DE LUZ'
     },
     {
       id: 2,
-      nombre: 'PROVEEDOR DE AGUA'
+      descripcion: 'PROVEEDOR DE AGUA'
     },
     {
       id: 3,
-      nombre: 'TELEFONIA'
+      descripcion: 'TELEFONIA'
     },
     {
       id: 9,
-      nombre: 'GAS NATURAL'
+      descripcion: 'GAS NATURAL'
     },
     {
       id: 10,
-      nombre: 'MI HOGAR'
+      descripcion: 'MI HOGAR'
     },
     {
       id: 11,
-      nombre: 'MI VEHÍCULO'
+      descripcion: 'MI VEHÍCULO'
     },
     {
       id: 12,
-      nombre: 'MI PROYECTO'
+      descripcion: 'MI PROYECTO'
     },
     {
       id: 13,
-      nombre: 'MI NEGOCIO'
+      descripcion: 'MI NEGOCIO'
     },
     {
       id: 14,
-      nombre: 'INTERNET 70 MBPS'
+      descripcion: 'INTERNET 70 MBPS'
     }
   ]
 
+  public idservicio: any;
+  public servicios: any;
   public pagoForm: FormGroup;
   public servicioId: any = 0
 
-  constructor(private PagoService: PagoService) { }
+  constructor(private PagoService: PagoService, private EmpresaService: EmpresaService) { }
 
   ngOnInit(): void {
     this.pagoForm = this.createForm();
+    this.llenarServicios()
   }
 
   createForm = () => {
@@ -74,9 +78,20 @@ export class RegistrarPagoComponent implements OnInit {
     this.pagoForm.reset();
   }
 
-  onSaveForm(): void {
+  llenarServicios(): void {
+    this.EmpresaService.getPagos().subscribe(
+      (res: any) => {
+        console.log(res)
+        this.empresas = res
+      },
+      err => console.error(err)
+    )
+  }
 
+  onSaveForm(): void {
+    console.log('1', this.pagoForm.value)
     this.pagoForm.value.servicioId = this.servicioId
+    console.log('2', this.pagoForm.value)
 
     this.PagoService.savePago(this.pagoForm.value).subscribe(
       (res: any) => {
@@ -92,7 +107,13 @@ export class RegistrarPagoComponent implements OnInit {
     this.onResetForm();
   }
 
-  changeServicio(e) {
-    this.servicioId = e.target.selectedIndex
+  changeEmpresa(e: any) {
+    this.servicios = this.empresas.filter((empresa: any) => {
+      return empresa.id == e.target.selectedIndex ? empresa.servicios : null
+    })
+  }
+
+  changeServicio(e: any) {
+    this.servicioId = document.querySelectorAll('#select-servicios option')[e.target.selectedIndex].getAttribute('ng-reflect-ng-value')
   }
 }
