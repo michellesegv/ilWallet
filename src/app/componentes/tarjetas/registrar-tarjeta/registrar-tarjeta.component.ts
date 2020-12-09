@@ -12,6 +12,7 @@ export class RegistrarTarjetaComponent implements OnInit {
   public tarjetaForm: FormGroup;
   public marcaId: any = 0
   public tipoId: any = 0
+  public tarjeta: any = 0
 
   public tipos: any = [
     {
@@ -59,6 +60,7 @@ export class RegistrarTarjetaComponent implements OnInit {
 
   ngOnInit(): void {
     this.tarjetaForm = this.createForm();
+    this.generateRandom(16)
   }
 
   createForm = () => {
@@ -88,6 +90,7 @@ export class RegistrarTarjetaComponent implements OnInit {
 
     this.tarjetaForm.value.marcatarjeta.marcarTajertaId = this.marcaId
     this.tarjetaForm.value.tipotarjeta.id = this.tipoId
+    this.tarjetaForm.value.numeroTarjeta = this.tarjeta
 
     this.TarjetaService.saveTarjeta(this.tarjetaForm.value).subscribe(
       (res: any) => {
@@ -106,7 +109,17 @@ export class RegistrarTarjetaComponent implements OnInit {
   changeMarca(e: any) {
     this.marcaId = e.target.selectedIndex
   }
+
   changeTipo(e: any) {
     this.tipoId = e.target.selectedIndex
+  }
+
+  generateRandom(size: number) {
+    let numeroRandoms = ''
+    for (let i = 0; i < size; i++) {
+      let numeroRandom = Math.round(Math.random() * 10).toString()
+      numeroRandoms += numeroRandom
+    }
+    this.tarjeta = numeroRandoms
   }
 }

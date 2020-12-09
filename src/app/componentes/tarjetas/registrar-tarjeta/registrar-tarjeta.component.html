@@ -8,9 +8,15 @@
     <main>
 
       <form [formGroup]="tarjetaForm" (ngSubmit)="onSaveForm()">
-        <div class="form-item box-item">
-          <input type="text" name="numeroTarjeta" placeholder="Número de tarjeta" formControlName="numeroTarjeta"
-            data-required>
+        <div class="form-item-double box-item">
+          <div class="form-item ">
+            <div class="radio-label">
+              <label class="label">Nmro Tarjeta</label>
+            </div>
+          </div>
+          <div class="form-item">
+            <label class="label">{{tarjeta}}</label>
+          </div>
         </div>
 
         <div class="form-item-double box-item">

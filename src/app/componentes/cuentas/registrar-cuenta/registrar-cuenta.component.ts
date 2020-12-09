@@ -60,10 +60,12 @@ export class RegistrarCuentaComponent implements OnInit {
   public bankId: any = 0
   public tipoCuentaId: any = 0
   public tipoCuentaName: any = ''
+  public cuenta: any
 
   ngOnInit(): void {
     this.cuentaForm = this.createForm();
     this.idCliente = JSON.parse(localStorage.getItem('dataUser')).id
+    this.generateRandom(17)
   }
 
   createForm = () => {
@@ -103,6 +105,8 @@ export class RegistrarCuentaComponent implements OnInit {
     this.cuentaForm.value.tipocuenta.id = this.tipoCuentaId
     this.cuentaForm.value.tipocuenta.descripcion = this.tipoCuentaName
 
+    this.cuentaForm.value.numerocuenta = this.cuenta
+
     console.log(this.cuentaForm.value)
     this.CuentaService.saveCuenta(this.cuentaForm.value).subscribe(
       (res: any) => {
@@ -121,10 +125,20 @@ export class RegistrarCuentaComponent implements OnInit {
   changeBanco(e: any) {
     this.bankId = e.target.selectedIndex
   }
+
   changeTipoCuenta(e: any) {
     this.tipoCuentaId = e.target.selectedIndex
     this.tipoCuentaName = e.target.value
     console.log(this.tipoCuentaId)
     console.log(this.tipoCuentaName)
+  }
+
+  generateRandom(size: number) {
+    let numeroRandoms = ''
+    for (let i = 0; i < size; i++) {
+      let numeroRandom = Math.round(Math.random() * 10).toString()
+      numeroRandoms += numeroRandom
+    }
+    this.cuenta = numeroRandoms
   }
 }
