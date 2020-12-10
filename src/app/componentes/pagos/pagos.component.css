@@ -178,3 +178,11 @@
 .container {
   padding-bottom: 30px;
 }
+
+#porcentajes-gastos {
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+.hidden {
+  display: none !important;
+}

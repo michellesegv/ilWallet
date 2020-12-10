@@ -23,6 +23,10 @@ export class ClienteService {
     return this.http.post(`${this.API_URI}/add`, cliente);
   }
 
+  getGatosPorCategorias(idCliente: number) {
+    return this.http.get(`${this.API_URI}/gastosPorCategoria/${idCliente}/2020-01-01/2031-12-31`);
+  }
+
   loginCliente(cliente: ClienteLogin) {
     console.log(cliente)
     return this.http.post(`${this.API_URI}/login`, cliente);

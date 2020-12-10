@@ -9,6 +9,12 @@
     </div>
   </div>
 
+  <div class="container-fluid hidden" id="porcentajes-gastos">
+    <div class="chart-wrapper">
+      <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
+      </canvas>
+    </div>
+  </div>
 
   <div class="table-responsive">
     <table class="table v-middle">
